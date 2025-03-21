@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="#E3F2FD">
+
+    <Button
+        android:id="@+id/btn_new_game"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:text="New Game"
+        android:background="#2196F3"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"/>
+
+    <Spinner
+        android:id="@+id/difficulty_spinner"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:entries="@array/difficulty_levels"
+        android:background="#2196F3"
+        android:popupBackground="#FFFFFF"
+        android:spinnerMode="dropdown"
+        android:textColor="#FFFFFF"/>
+
+    <!-- 关键修改：调整GridLayout参数 -->
+    <GridLayout
+        android:id="@+id/sudoku_grid"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:columnCount="9"
+        android:rowCount="9"
+        android:background="#2196F3"
+        android:padding="4dp"
+        android:layout_marginTop="16dp">
+
+</GridLayout>
+
+</LinearLayout>
