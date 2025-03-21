@@ -130,8 +130,9 @@ class MainActivity : AppCompatActivity() {
         sudokuGrid.removeAllViews()
 
         val displayMetrics = resources.displayMetrics
-        val screenWidth = displayMetrics.widthPixels - 32.dpToPx() // 16dp padding on each side
-        val cellSize = screenWidth / 9
+        val screenWidth = displayMetrics.widthPixels - 32.dpToPx()
+        val totalMargin = 2 * 3 + 1 * 6 + 20
+        val cellSize = (screenWidth - totalMargin) / 9
 
         for (row in 0..8) {
             for (col in 0..8) {
@@ -366,9 +367,6 @@ class SudokuGenerator {
             val (row, col) = cell
             val temp = puzzle[row][col]
             puzzle[row][col] = 0
-
-            // In a production app, we would verify unique solution here
-            // For simplicity, we're skipping that check in this example
 
             removed++
         }

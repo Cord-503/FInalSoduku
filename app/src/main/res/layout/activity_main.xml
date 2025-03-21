@@ -1,20 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:padding="16dp"
     android:background="#E3F2FD">
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="68dp" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="68dp" />
 
     <Button
         android:id="@+id/btn_new_game"
         android:layout_width="match_parent"
         android:layout_height="48dp"
-        android:text="New Game"
         android:background="#2196F3"
-        android:textColor="#FFFFFF"
-        android:textSize="16sp"/>
+        android:text="New Game"
+        android:textColor="#000000"
+        android:textColorLink="#E22A2A"
+        android:textSize="16sp" />
 
     <Spinner
         android:id="@+id/difficulty_spinner"
@@ -26,18 +35,50 @@
         android:spinnerMode="dropdown"
         android:textColor="#FFFFFF"/>
 
-    <!-- 关键修改：调整GridLayout参数 -->
-    <GridLayout
-        android:id="@+id/sudoku_grid"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
-        android:columnCount="9"
-        android:rowCount="9"
-        android:background="#2196F3"
-        android:padding="4dp"
-        android:layout_marginTop="16dp">
+        android:layout_weight="1">
 
-</GridLayout>
+        <GridLayout
+            android:id="@+id/sudoku_grid"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="#2196F3"
+            android:columnCount="9"
+            android:padding="4dp"
+            android:rowCount="9"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintDimensionRatio="1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0">
+
+            <TextView
+                android:id="@+id/cell_00"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_row="0"
+                android:layout_column="0"
+                android:background="#FFFFFF"
+                android:gravity="center"
+                android:text="1" />
+
+            <TextView
+                android:id="@+id/cell_01"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_row="0"
+                android:layout_column="1"
+                android:background="#FFFFFF"
+                android:gravity="center"
+                android:text="2" />
+
+
+        </GridLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </LinearLayout>
