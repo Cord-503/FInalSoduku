@@ -2,9 +2,10 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="colorPrimary">#2196F3</color>
+
+    <color name="buttonGray">#ADB6C2</color>          <color name="buttonOrange">#D35928</color>        <color name="buttonOrangeLight">#E88258</color>    <color name="buttonRed">#E91E63</color>           <color name="colorPrimary">#002FA7</color>
     <color name="colorPrimaryDark">#1976D2</color>
-    <color name="colorAccent">#03A9F4</color>
     <color name="colorBackground">#E3F2FD</color>
-    <color name="cellAlternate">#F5F5F5</color>
+    <color name="noteColor">#9E9E9E</color>
+    <color name="gridBackground">#E0E0E0</color>
 </resources>
