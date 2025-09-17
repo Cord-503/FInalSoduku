@@ -1,5 +1,6 @@
 package com.example.finalsoduku
 
+import android.annotation.SuppressLint
 import android.graphics.Color
 import android.os.Bundle
 import android.util.TypedValue
@@ -112,6 +113,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     // Updated handleCellClick to include the new erase mode logic
+    @SuppressLint("SetTextI18n")
     private fun handleCellClick(cellView: View, row: Int, col: Int) {
         if (!isGameActive || originalPuzzle[row][col] != 0) return
 
@@ -216,6 +218,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    @SuppressLint("SetTextI18n")
     private fun createSudokuCellView(value: Int, row: Int, col: Int): View {
         val frameLayout = FrameLayout(this)
         val blockIndex = (row / 3) * 3 + (col / 3)

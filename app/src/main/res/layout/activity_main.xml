@@ -48,8 +48,8 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:textOn="笔记模式 (开)"
-            android:textOff="笔记模式 (关)"
+            android:textOn="Note (on)"
+            android:textOff="Note (off)"
             android:background="@drawable/toggle_notes_background"  android:textColor="@color/white"
             android:layout_marginEnd="8dp"/>
 
@@ -58,9 +58,9 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="擦除"
-            android:textOn="擦除模式 (开)"
-            android:textOff="擦除模式 (关)"
+            android:text="erase"
+            android:textOn="erase (on)"
+            android:textOff="erase (off)"
             android:background="@drawable/toggle_erase_background"
             android:textColor="@color/white"
             android:layout_marginStart="8dp"/>
