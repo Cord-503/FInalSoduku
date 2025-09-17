@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">Sudoku Puzzle</string>
     <string-array name="difficulty_levels">
-        <item>Easy (40 hints)</item>
-        <item>Medium (30 hints)</item>
-        <item>Hard (25 hints)</item>
+        <item>Easy (50 hints)</item>
+        <item>Medium (40 hints)</item>
+        <item>Hard (30 hints)</item>
     </string-array>
 </resources>

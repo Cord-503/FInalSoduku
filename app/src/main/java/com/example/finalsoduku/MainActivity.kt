@@ -13,9 +13,9 @@ import androidx.core.content.ContextCompat
 
 // Difficulty enum class
 enum class Difficulty(val visibleCells: Int) {
-    EASY(40),
-    MEDIUM(30),
-    HARD(25)
+    EASY(50),
+    MEDIUM(40),
+    HARD(30)
 }
 
 class MainActivity : AppCompatActivity() {
