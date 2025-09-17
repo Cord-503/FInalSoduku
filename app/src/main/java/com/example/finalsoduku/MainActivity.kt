@@ -286,8 +286,54 @@ class MainActivity : AppCompatActivity() {
         return board.all { row -> row.all { it != 0 } }
     }
 
+    private fun isBoardValid(board: Array<IntArray>): Boolean {
+        // Check rows for validity
+        for (r in 0..8) {
+            val seen = mutableSetOf<Int>()
+            for (c in 0..8) {
+                val num = board[r][c]
+                // If a cell is empty (0) or a number is repeated in the row, it's invalid.
+                if (num == 0 || !seen.add(num)) {
+                    return false
+                }
+            }
+        }
+
+        // Check columns for validity
+        for (c in 0..8) {
+            val seen = mutableSetOf<Int>()
+            for (r in 0..8) {
+                val num = board[r][c]
+                // If a number is repeated in the column, it's invalid.
+                if (!seen.add(num)) {
+                    return false
+                }
+            }
+        }
+
+        // Check 3x3 boxes for validity
+        for (boxRow in 0..2) {
+            for (boxCol in 0..2) {
+                val seen = mutableSetOf<Int>()
+                for (r in (boxRow * 3) until (boxRow * 3 + 3)) {
+                    for (c in (boxCol * 3) until (boxCol * 3 + 3)) {
+                        val num = board[r][c]
+                        // If a number is repeated in the 3x3 box, it's invalid.
+                        if (!seen.add(num)) {
+                            return false
+                        }
+                    }
+                }
+            }
+        }
+
+        // If all checks passed, the board is a valid solution.
+        return true
+    }
+
     private fun checkSolution() {
-        val isCorrect = currentBoard.contentDeepEquals(solution)
+        val isCorrect = isBoardValid(currentBoard)
+
         val title = if (isCorrect) "Congratulations!" else "Not Quite"
         val message = if (isCorrect) "You solved the puzzle successfully!" else "There are some mistakes in your solution."
         AlertDialog.Builder(this)
