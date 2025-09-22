@@ -26,7 +26,7 @@
             android:id="@+id/sudoku_grid"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/colorPrimary"
+            android:background="@color/buttonGray"
             android:columnCount="9"
             android:rowCount="9" />
     </FrameLayout>
@@ -138,6 +138,7 @@
                 android:layout_weight="1"
                 android:background="@drawable/cell_border"
                 android:padding="10dp"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
                 android:spinnerMode="dropdown" />
 
             <androidx.appcompat.widget.AppCompatButton
