@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Sudoku Puzzle</string>
+    <string name="app_name">Liu’s Sudoku</string>
     <string-array name="difficulty_levels">
         <item>Easy (50 hints)</item>
         <item>Medium (40 hints)</item>

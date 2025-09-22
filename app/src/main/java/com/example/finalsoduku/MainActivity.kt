@@ -47,7 +47,23 @@ class MainActivity : AppCompatActivity() {
 
         setupControlButtons()
         setupNewGameButton()
-        setupEmptyBoard()
+        startNewGame()
+        setupDifficultySpinner()
+
+    }
+
+    private fun setupDifficultySpinner() {
+        val difficultySpinner: Spinner = findViewById(R.id.difficulty_spinner)
+
+        val adapter = ArrayAdapter.createFromResource(
+            this,
+            R.array.difficulty_levels,
+            R.layout.spinner_item_black_text // 这是选中项的布局 (20sp)
+        )
+
+        adapter.setDropDownViewResource(R.layout.custom_spinner_dropdown_item)
+
+        difficultySpinner.adapter = adapter
     }
 
     private fun setupControlButtons() {
@@ -181,7 +197,8 @@ class MainActivity : AppCompatActivity() {
         val difficulty = when (findViewById<Spinner>(R.id.difficulty_spinner).selectedItemPosition) {
             0 -> Difficulty.EASY
             1 -> Difficulty.MEDIUM
-            else -> Difficulty.HARD
+            2 -> Difficulty.HARD
+            else -> Difficulty.EASY
         }
 
         solution = generator.generateFullSudoku()

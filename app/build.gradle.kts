@@ -24,6 +24,8 @@ android {
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+            applicationIdSuffix = "0.2"
+            versionNameSuffix = "0.2"
         }
     }
     compileOptions {

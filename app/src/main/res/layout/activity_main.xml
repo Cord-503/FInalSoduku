@@ -137,7 +137,6 @@
                 android:layout_height="50dp"
                 android:layout_weight="1"
                 android:background="@drawable/cell_border"
-                android:entries="@array/difficulty_levels"
                 android:padding="10dp"
                 android:spinnerMode="dropdown" />
 
